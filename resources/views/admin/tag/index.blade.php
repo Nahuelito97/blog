@@ -4,13 +4,13 @@
 <!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="container-fluid">
-        <div class="row mb-2">
+        <div class="mb-2 row">
             <div class="col-sm-6">
                 <h1 class="m-0 text-dark">Tag List</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ route('website') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item active">Tag list</li>
                 </ol>
             </div><!-- /.col -->
@@ -32,7 +32,7 @@
                         </div>
                     </div>
                     <!-- /.card-header -->
-                    <div class="card-body p-0">
+                    <div class="p-0 card-body">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -50,17 +50,17 @@
                                         <td>{{ $tag->name }}</td>
                                         <td>{{ $tag->slug }}</td>
                                         <td class="d-flex">
-                                            <a href="{{ route('tag.edit', [$tag->id]) }}" class="btn btn-sm btn-primary mr-1"> <i class="fas fa-edit"></i> </a>
+                                            <a href="{{ route('tag.edit', [$tag->id]) }}" class="mr-1 btn btn-sm btn-primary"> <i class="fas fa-edit"></i> </a>
                                             <form action="{{ route('tag.destroy', [$tag->id]) }}" class="mr-1" method="POST">
                                                 @method('DELETE')
-                                                @csrf 
+                                                @csrf
                                                 <button type="submit" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </button>
                                             </form>
-                                            {{-- <a href="{{ route('tag.show', [$tag->id]) }}" class="btn btn-sm btn-success mr-1"> <i class="fas fa-eye"></i> </a> --}}
+                                            {{-- <a href="{{ route('tag.show', [$tag->id]) }}" class="mr-1 btn btn-sm btn-success"> <i class="fas fa-eye"></i> </a> --}}
                                         </td>
                                     </tr>
                                 @endforeach
-                                @else   
+                                @else
                                     <tr>
                                         <td colspan="4">
                                             <h5 class="text-center">No tags found.</h5>

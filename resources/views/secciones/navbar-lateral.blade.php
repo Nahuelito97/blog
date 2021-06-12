@@ -44,7 +44,7 @@
             </a>
           </li>
           <li class="mt-auto nav-item">
-            <a href="#" class="nav-link {{ (request()->is('admin/tag*')) ? 'active': '' }}">
+            <a href="{{ route('tag.index') }}" class="nav-link {{ (request()->is('admin/tag*')) ? 'active': '' }}">
               <i class="nav-icon fas fa-tag"></i>
               <p>
                 Tags
@@ -52,7 +52,7 @@
             </a>
           </li>
           <li class="mt-auto nav-item">
-            <a href="#" class="nav-link {{ (request()->is('admin/post*')) ? 'active': '' }}">
+            <a href="{{ route('post.index') }}" class="nav-link {{ (request()->is('admin/post*')) ? 'active': '' }}">
               <i class="nav-icon fas fa-pen-square"></i>
               <p>
                 Post

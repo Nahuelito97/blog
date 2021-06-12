@@ -52,6 +52,6 @@ class CategoryController extends Controller
 
         Session::flash('success', 'Category deleted successfully');
 
-        return redirect()->route('category .index');
+        return redirect()->back();
     }
 }

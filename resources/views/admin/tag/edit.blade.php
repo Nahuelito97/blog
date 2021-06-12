@@ -4,13 +4,13 @@
 <!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="container-fluid">
-        <div class="row mb-2">
+        <div class="mb-2 row">
             <div class="col-sm-6">
                 <h1 class="m-0 text-dark">Edit Tag</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ route('website') }}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item"><a href="{{ route('tag.index') }}">Tag list</a></li>
                     <li class="breadcrumb-item active">Edit Tag</li>
                 </ol>
@@ -32,11 +32,11 @@
                             <a href="{{ route('tag.index') }}" class="btn btn-primary">Go Back to Tag List</a>
                         </div>
                     </div>
-                    <div class="card-body p-0">
+                    <div class="p-0 card-body">
                         <div class="row">
                             <div class="col-12 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
                                 <form action="{{ route('tag.update', [$tag->id]) }}" method="POST">
-                                    @csrf 
+                                    @csrf
                                     @method('PUT')
                                     <div class="card-body">
                                         @include('includes.errors')
