@@ -1,46 +1,45 @@
-@extends('layouts.website')
-@section('content')    
-    <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('{{ asset('website') }}/images/img_4.jpg');">
-        <div class="container">
-        <div class="row same-height justify-content-center">
-            <div class="col-md-12 col-lg-10">
-            <div class="post-entry text-center">
-                <h1 class="">About Us</h1>
-                <p class="lead mb-4 text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem, adipisci?</p>
-            </div>
+@extends('layouts.front-end')
+
+@section('title', 'About')
+
+@section('content')
+
+    <div class="text-white container-fluid slider d-flex flex-column justify-content-center align-items-center">
+        <div class="py-5 col-12 col-md-10 col-lg-8">
+            <div class="text-center">
+                <strong>
+                    <h1 class=" text-md-center h2">Bienvenido a NahuCoodes, mi sitio personal en el que podras encontrar
+                        información sobre ciencia y tecnologia.</h1>
+                    <img src="{{ asset('front-end/assets/img/logo/brand.png') }}" class="rounded-circle"
+                        alt="Cinque Terre" width="50" height="40">
+                    <span class="badge badge-danger text-uppercase">NahuCoodes</span>
+                </strong>
             </div>
         </div>
-        </div>
+    </div>
+    <div class="container">
+          <div class="row">
+            <!-- Sección de noticias -->
+            <div class="mb-5 col-12 col-lg-9">
+
+              <div class="mb-5 row">
+                <div class="col-3">
+                  <img class="img-fluid" src="@if ($user->image) {{ $user->image }} @else
+                  {{ asset('website/images/user.png') }} @endif" alt="">
+                </div>
+                <div class="col-9">
+                    <div class="text-center alert alert-primary" role="alert">
+                        <h1 class="mb-0 text-center h2 text-secondary text-uppercase">sobre mi</h1>
+                    </div>
+                    <h3 class="text-center text-uppercase">{{ $user->name }}.</h3>
+                    <div class="blog-quote" <p class="card-text">{{ $user->description }}</p>
+                    </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
 
-    <div class="site-section bg-light">
-        <div class="container">
-        <div class="row">
-            <div class="col-md-6 order-md-2">
-            <img src="@if($user->image) {{ $user->image }} @else {{ asset('website/images/user.png') }} @endif" alt="Image" class="img-fluid">
-            </div>
-            <div class="col-md-5 mr-auto order-md-1">
-                <h2> {{ $user->name }}</h2>
-                <p>{{ $user->description }}</p>
-            </div>
-        </div>
-        </div>
-    </div>
-
-    <div class="site-section bg-white">
-        <div class="container">
-        <div class="row justify-content-center text-center">
-            <div class="col-md-5">
-            <div class="subscribe-1 ">
-                <h2>Subscribe to our newsletter</h2>
-                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit nesciunt error illum a explicabo, ipsam nostrum.</p>
-                <form action="#" class="d-flex">
-                <input type="text" class="form-control" placeholder="Enter your email address">
-                <input type="submit" class="btn btn-primary" value="Subscribe">
-                </form>
-            </div>
-            </div>
-        </div>
-        </div>
-    </div>
 @endsection

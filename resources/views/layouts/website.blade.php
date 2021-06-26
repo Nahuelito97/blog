@@ -66,7 +66,7 @@
     </header>
 
     @yield('content')
-
+    @include('frontend.footer')
   </div>
 
   <script src="{{ asset('website') }}/js/jquery-3.3.1.min.js"></script>

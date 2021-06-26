@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="mb-2 row">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Create Post</h1>
+                    <h1 class="m-0 text-dark">Crear Publicaciones</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Post list</a></li>
-                        <li class="breadcrumb-item active">Create Post</li>
+                        <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Lista Publicaciones</a></li>
+                        <li class="breadcrumb-item active">Crear Publicaciones</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,8 +28,8 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h3 class="card-title">Create Post</h3>
-                                <a href="{{ route('post.index') }}" class="btn btn-primary">Go Back to Post List</a>
+                                <h3 class="card-title">Crear Publicaciones</h3>
+                                <a href="{{ route('post.index') }}" class="btn btn-primary">Lista Publicaciones</a>
                             </div>
                         </div>
                         <div class="p-0 card-body">
@@ -40,14 +40,14 @@
                                         <div class="card-body">
                                             @include('includes.errors')
                                             <div class="form-group">
-                                                <label for="title">Post title</label>
-                                                <input type="name" name="title" value="{{ old('title') }}" class="form-control" placeholder="Enter title">
+                                                <label for="title">Tirulo</label>
+                                                <input type="name" name="title" value="{{ old('title') }}" class="form-control" placeholder="Ingrese un titulo para la publicación">
                                             </div>
                                             <div class="form-group">
-                                                <label for="category">Post Category</label>
+                                                <label for="category">Categorías</label>
 
                                                 <select name="category" id="category" class="form-control">
-                                                    <option value="" style="display: none" selected>Select Category</option>
+                                                    <option value="" style="display: none" selected>Selecciona una Categoría</option>
                                                     @foreach($categories as $c)
                                                     <option value="{{ $c->id }}"> {{ $c->name }} </option>
                                                     @endforeach
@@ -55,14 +55,14 @@
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="image">Image</label>
+                                                <label for="image">Imagen</label>
                                                 <div class="custom-file">
                                                     <input type="file" name="image" class="custom-file-input" id="image">
-                                                    <label class="custom-file-label" for="image">Choose file</label>
+                                                    <label class="custom-file-label" for="image">Selecciona una Imagen</label>
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label>Choose Post Tags</label>
+                                                <label>Elige una o mas Etiquetas</label>
                                                 <div class="flex-wrap  d-flex">
                                                     @foreach($tags as $tag)
                                                     <div class="custom-control custom-checkbox" style="margin-right: 20px">
@@ -73,14 +73,14 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Description</label>
+                                                <label for="exampleInputPassword1">Descripción</label>
                                                 <textarea name="description" id="description" rows="4" class="form-control"
-                                                    placeholder="Enter description">{{ old('description') }}</textarea>
+                                                    placeholder="Ingresa una Descripción">{{ old('description') }}</textarea>
                                             </div>
                                         </div>
 
                                         <div class="card-footer">
-                                            <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                                            <button type="submit" class="btn btn-lg btn-primary">Crear</button>
                                         </div>
                                     </form>
                                 </div>

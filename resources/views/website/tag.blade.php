@@ -1,4 +1,7 @@
-@extends('layouts.website')
+@extends('layouts.front-end')
+
+@section('title', 'Etiquetas')
+
 @section('content')
     <div class="py-5 bg-light">
       <div class="container">
@@ -14,25 +17,25 @@
       </div>
     </div>
 
-    <div class="site-section bg-white">
+    <div class="bg-white site-section">
       <div class="container">
         <div class="row">
           @foreach($posts as $post)
-          <div class="col-lg-4 mb-4">
+          <div class="mb-4 col-lg-4">
             <div class="entry2">
-              <a href="{{ route('website.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}" alt="Image" class="img-fluid rounded"></a>
+              <a href="{{ route('website.post', ['slug' => $post->slug]) }}"><img src="{{ $post->image }}" alt="Image" class="rounded img-fluid"></a>
               <div class="excerpt">
-              <span class="post-category text-white bg-secondary mb-3">{{ $post->category->name}}</span>
+              <span class="mb-3 text-white post-category bg-secondary">{{ $post->category->name}}</span>
 
               <h2><a href="{{ route('website.post', ['slug' => $post->slug]) }}">{{ $post->title }}</a></h2>
-              <div class="post-meta align-items-center text-left clearfix">
-                <figure class="author-figure mb-0 mr-3 float-left">
+              <div class="clearfix text-left post-meta align-items-center">
+                <figure class="float-left mb-0 mr-3 author-figure">
                   <img src="@if($post->user->image){{ asset($post->user->image) }} @else {{ asset('website/images/user.png') }} @endif" alt="Image" class="img-fluid">
                 </figure>
-                <span class="d-inline-block mt-1">By <a href="#">{{ $post->user->name }}</a></span>
+                <span class="mt-1 d-inline-block">By <a href="#">{{ $post->user->name }}</a></span>
                 <span>&nbsp;-&nbsp; {{ $post->created_at->format('M d, Y') }}</span>
               </div>
-              
+
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo sunt tempora dolor laudantium sed optio, explicabo ad deleniti impedit facilis fugit recusandae! Illo, aliquid, dicta beatae quia porro id est.</p>
                 <p><a href="#">Read More</a></p>
               </div>
@@ -40,7 +43,7 @@
           </div>
           @endforeach
         </div>
-        <div class="row text-center pt-5 border-top">
+        <div class="pt-5 text-center row border-top">
           <div class="col-md-12">
              {{ $posts->links() }}
           </div>
@@ -48,4 +51,4 @@
     </div>
     </div>
 @endsection
-    
+

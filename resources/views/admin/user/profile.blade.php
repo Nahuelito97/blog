@@ -8,13 +8,12 @@
         <div class="container-fluid">
             <div class="mb-2 row">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">User Profile</h1>
+                    <h1 class="m-0 text-dark">Mi Perfil</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('user.index') }}">User list</a></li>
-                        <li class="breadcrumb-item active">User Profile</li>
+                        <li class="breadcrumb-item"><a href="{{ route('user.index') }}">Lista</a></li>
+                        <li class="breadcrumb-item active">Mi Perfil</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -30,8 +29,8 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h3 class="card-title">User Profile</h3>
-                                <a href="{{ route('user.index') }}" class="btn btn-primary">Go Back to User List</a>
+                                <h3 class="card-title">Mi Perfil</h3>
+                                <a href="{{ route('user.index') }}" class="btn btn-primary">Volver</a>
                             </div>
                         </div>
                         <div class="p-0 card-body">
@@ -45,35 +44,35 @@
                                             <div class="row">
                                                 <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="name">User name</label>
+                                                        <label for="name">Nombre</label>
                                                         <input type="name" name="name" class="form-control" id="name" placeholder="Enter name" value="{{ $user->name }}">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="email">User email</label>
+                                                        <label for="email">Email</label>
                                                         <input type="email" name="email" class="form-control" id="email" placeholder="Enter email" value="{{ $user->email }}">
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="password">User password<small class="text-info">(Enter password if you want change.)</small></label>
-                                                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter password">
+                                                        <label for="password">Contraseña</label>
+                                                        <input type="password" name="password" class="form-control" id="password" placeholder="Ingresa una contraseña">
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
                                                     <div class="form-group">
-                                                        <label for="image">User image</label>
+                                                        <label for="image">Imagen</label>
                                                             <div class="custom-file">
                                                             <input type="file" class="custom-file-input" name="image" id="exampleInputFile">
-                                                            <label class="custom-file-label" for="exampleInputFile">Choose file</label>
+                                                            <label class="custom-file-label" for="exampleInputFile">Elije un archivo</label>
                                                         </div>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="description">User description</label>
-                                                        <textarea name="description" id="description" rows="5" class="form-control" placeholder="Write your profile description">{{ $user->description }}</textarea>
+                                                        <label for="description">Descripción</label>
+                                                        <textarea name="description" id="description" rows="5" class="form-control" placeholder="Ingresa una descripción para tu perfil">{{ $user->description }}</textarea>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="card-footer">
-                                            <button type="submit" class="btn btn-lg btn-primary">Update Profile</button>
+                                            <button type="submit" class="btn btn-lg btn-primary">Actualizar</button>
                                         </div>
                                     </form>
                                 </div>

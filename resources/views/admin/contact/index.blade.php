@@ -4,7 +4,7 @@
 <!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="container-fluid">
-        <div class="row mb-2">
+        <div class="mb-2 row">
             <div class="col-sm-6">
                 <h1 class="m-0 text-dark">Message List</h1>
             </div><!-- /.col -->
@@ -31,7 +31,7 @@
                         </div>
                     </div>
                     <!-- /.card-header -->
-                    <div class="card-body p-0">
+                    <div class="p-0 card-body">
                         <table class="table table-striped">
                             <thead>
                                 <tr>
@@ -50,18 +50,18 @@
                                         <td>{{ $message->name }}</td>
                                         <td>{{ $message->email }}</td>
                                         <td>{{ $message->subject }}</td>
-                                        
+
                                         <td class="d-flex">
-                                            <a href="{{ route('contact.show', ['id' => $message->id]) }}" class="btn btn-sm btn-success mr-1"> <i class="fas fa-eye"></i> </a>
+                                            <a href="{{ route('contact.show', ['id' => $message->id]) }}" class="mr-1 btn btn-sm btn-success"> <i class="fas fa-eye"></i> </a>
                                             <form action="{{ route('contact.destroy', ['id' => $message->id]) }}" class="mr-1" method="POST">
                                                 @method('DELETE')
-                                                @csrf 
+                                                @csrf
                                                 <button type="submit" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </button>
                                             </form>
                                         </td>
                                     </tr>
                                 @endforeach
-                                @else   
+                                @else
                                     <tr>
                                         <td colspan="6">
                                             <h5 class="text-center">No messages found.</h5>

@@ -32,7 +32,7 @@
                 <div class="inner">
                     <h3>{{ $postCount }}</h3>
 
-                  <p>Posts</p>
+                  <p>Publicaciones</p>
                 </div>
                 <div class="icon">
                   <i class="fas fa-pen-square"></i>
@@ -46,7 +46,7 @@
                 <div class="inner">
                   <h3>{{ $categoryCount }}</h3>
 
-                  <p>Categories</p>
+                  <p>Categorias</p>
                 </div>
                 <div class="icon">
                   <i class="fas fa-tags"></i>
@@ -58,9 +58,9 @@
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3></h3>
+                  <h3>{{$tagCount}}</h3>
 
-                  <p>Tags</p>
+                  <p>Etiqutas</p>
                 </div>
                 <div class="icon">
                   <i class="fas fa-tag"></i>
@@ -72,9 +72,9 @@
               <!-- small box -->
               <div class="small-box bg-danger">
                 <div class="inner">
-                  <h3></h3>
+                  <h3>{{$userCount}}</h3>
 
-                  <p>Users</p>
+                  <p>Usuarios</p>
                 </div>
                 <div class="icon">
                     <i class="fas fa-user"></i>
@@ -88,23 +88,23 @@
                   <div class="card">
                       <div class="card-header">
                           <div class="d-flex justify-content-between align-items-center">
-                              <h3 class="card-title">Post List</h3>
-                              <a href="{{ route('post.index') }}" class="btn btn-primary">Post List</a>
+                              <h3 class="card-title">Lista de Publicaciones</h3>
+                              <a href="{{ route('post.index') }}" class="btn btn-primary">Publicaciones</a>
                           </div>
                       </div>
                       <!-- /.card-header -->
                       <div class="p-0 card-body">
-                          <table class="table table-striped">
+                          <table class="table table-hover">
                               <thead>
                                   <tr>
                                       <th style="width: 10px">#</th>
-                                      <th>Image</th>
-                                      <th>Title</th>
-                                      <th>Category</th>
-                                      <th>Tags</th>
-                                      <th>Author</th>
-                                      <th>Created Date</th>
-                                      <th style="width: 40px">Action</th>
+                                      <th>Imagen</th>
+                                      <th>Titulo</th>
+                                      <th>Categoria</th>
+                                      <th>Etiquetas</th>
+                                      <th>Autor</th>
+                                      <th>Fecha de Publicación</th>
+                                      <th style="width: 40px">Acciónes</th>
                                   </tr>
                               </thead>
                               <tbody>

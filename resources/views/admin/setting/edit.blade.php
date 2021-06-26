@@ -4,14 +4,14 @@
 <!-- Content Header (Page header) -->
 <div class="content-header">
     <div class="container-fluid">
-        <div class="row mb-2">
+        <div class="mb-2 row">
             <div class="col-sm-6">
-                <h1 class="m-0 text-dark">Edit Setting</h1>
+                <h1 class="m-0 text-dark">Editar Configuración</h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <li class="breadcrumb-item"><a href="{{ route('website') }}">Home</a></li>
-                    <li class="breadcrumb-item active">Edit Setting</li>
+
+                    <li class="breadcrumb-item active">Editar Configuración</li>
                 </ol>
             </div><!-- /.col -->
         </div><!-- /.row -->
@@ -27,15 +27,15 @@
                 <div class="card">
                     <div class="card-header">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h3 class="card-title">Edit Site Setting </h3>
+                            <h3 class="card-title">Editar </h3>
                         </div>
                     </div>
-                    <div class="card-body p-0">
+                    <div class="p-0 card-body">
                         <div class="row">
                             <div class="col-12 col-lg-8 offset-lg-2 col-md-8 offset-md-2">
                                 <div class="card-body">
                                     <form action="{{ route('setting.update') }}" method="POST" enctype="multipart/form-data">
-                                        @csrf 
+                                        @csrf
                                         @include('includes.errors')
                                         <div class="form-group">
                                             <label for="name">Site Name</label>
@@ -100,7 +100,7 @@
                                                         <label class="custom-file-label" for="logo">Choose file</label>
                                                     </div>
                                                 </div>
-                                                <div class="col-4 text-right">
+                                                <div class="text-right col-4">
                                                     <div style="max-width: 100px; max-height: 100px;overflow:hidden; margin-left: auto">
                                                         <img src="{{ asset($setting->site_logo) }}" class="img-fluid" alt="">
                                                     </div>

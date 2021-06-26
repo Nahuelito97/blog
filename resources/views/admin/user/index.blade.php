@@ -7,12 +7,11 @@
         <div class="container-fluid">
             <div class="mb-2 row">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">User List</h1>
+                    <h1 class="m-0 text-dark">Lista Usuarios</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">User list</li>
+                        <li class="breadcrumb-item active">Lista Usuarios</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,8 +27,8 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h3 class="card-title">User List</h3>
-                                <a href="{{ route('user.create') }}" class="btn btn-primary">Create User</a>
+                                <h3 class="card-title">Lista Usuarios</h3>
+                                <a href="{{ route('user.create') }}" class="btn btn-primary">Crear Usuarios</a>
                             </div>
                         </div>
                         <!-- /.card-header -->
@@ -38,10 +37,10 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>Image</th>
-                                        <th>Name</th>
+                                        <th>Imagen</th>
+                                        <th>Nombre</th>
                                         <th>Email</th>
-                                        <th  style="width: 150px">Action</th>
+                                        <th  style="width: 150px">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -57,11 +56,11 @@
                                             <td>{{ $user->name }}</td>
                                             <td>{{ $user->email }}</td>
                                             <td class="d-flex" style="width: 150px">
-                                                <a href="{{ route('user.edit', [$user->id]) }}" class="mr-1 btn btn-sm btn-primary"> <i class="fas fa-edit"></i> </a>
+                                                <a href="{{ route('user.edit', [$user->id]) }}" class="mr-1 btn btn-sm btn-primary" title="Editar"> <i class="fas fa-edit"></i> </a>
                                                 <form action="{{ route('user.destroy', [$user->id]) }}" class="mr-1" method="POST">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button type="submit" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </button>
+                                                    <button type="submit" class="btn btn-sm btn-danger" title="Eliminar"> <i class="fas fa-trash"></i> </button>
                                                 </form>
                                             </td>
                                         </tr>

@@ -6,6 +6,8 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>@yield('title')</title>
+  <link rel="shortcut icon" type="image/x-icon" href="{{asset('front-end/assets/img/logo/brand.png')}}">
+
   <link rel="stylesheet" href="{{ asset('adminlt') }}/plugins/fontawesome-free/css/all.min.css">
   <link rel="stylesheet" href="{{ asset('adminlt') }}/css/adminlte.min.css">
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
@@ -24,10 +26,9 @@
 
     <!-- Content Wrapper. Contains page content -->
     <div class="wrapper">
-        @include('secciones.navbar')
         @include('secciones.navbar-lateral')
         @yield('content')
-        @include('secciones.footer')
+        
     </div>
 
 

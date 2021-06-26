@@ -7,13 +7,12 @@
         <div class="container-fluid">
             <div class="mb-2 row">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Create Category</h1>
+                    <h1 class="m-0 text-dark">Crear Categoría</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item"><a href="{{ route('category.index') }}">Category list</a></li>
-                        <li class="breadcrumb-item active">Create Category</li>
+                        <li class="breadcrumb-item"><a href="{{ route('category.index') }}">Lista Categorias</a></li>
+                        <li class="breadcrumb-item active">Crear Categoría</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -29,8 +28,8 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h3 class="card-title">Create Category</h3>
-                                <a href="{{ route('category.index') }}" class="btn btn-primary">Go Back to Category List</a>
+                                <h3 class="card-title">Crear Categoría</h3>
+                                <a href="{{ route('category.index') }}" class="btn btn-primary">Volver a la Lista</a>
                             </div>
                         </div>
                         <div class="p-0 card-body">
@@ -41,18 +40,18 @@
                                         <div class="card-body">
                                             @include('includes.errors')
                                             <div class="form-group">
-                                                <label for="name">Category name</label>
-                                                <input type="name" name="name" class="form-control" id="name" placeholder="Enter name">
+                                                <label for="name">Nombre</label>
+                                                <input type="name" name="name" class="form-control" id="name" placeholder="Ingrese un nombre para la categoría">
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Description</label>
+                                                <label for="exampleInputPassword1">Descripción  </label>
                                                 <textarea name="description" id="description" rows="4" class="form-control"
-                                                    placeholder="Enter description"></textarea>
+                                                    placeholder="Ingrese la descripción para la categoría"></textarea>
                                             </div>
                                         </div>
 
                                         <div class="card-footer">
-                                            <button type="submit" class="btn btn-lg btn-primary">Submit</button>
+                                            <button type="submit" class="btn btn-lg btn-primary">Crear</button>
                                         </div>
                                     </form>
                                 </div>

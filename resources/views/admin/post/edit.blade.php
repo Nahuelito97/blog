@@ -7,12 +7,12 @@
         <div class="container-fluid">
             <div class="mb-2 row">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Edit Post</h1>
+                    <h1 class="m-0 text-dark">Editar Publicación</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Post list</a></li>
-                        <li class="breadcrumb-item active">Edit Post</li>
+                        <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Lista</a></li>
+                        <li class="breadcrumb-item active">Editar Publicación</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -28,8 +28,8 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h3 class="card-title">Edit Post - {{ $post->name }}</h3>
-                                <a href="{{ route('post.index') }}" class="btn btn-primary">Go Back to Post List</a>
+                                <h3 class="card-title">Editar Publicación</h3>
+                                <a href="{{ route('post.index') }}" class="btn btn-primary">Volver a la Lista</a>
                             </div>
                         </div>
                         <div class="p-0 card-body">
@@ -41,14 +41,14 @@
                                             @method('PUT')
                                             @include('includes.errors')
                                             <div class="form-group">
-                                                <label for="title">Post title</label>
+                                                <label for="title">Titulo</label>
                                                 <input type="name" name="title" value="{{ $post->title }}" class="form-control" placeholder="Enter title">
                                             </div>
                                             <div class="form-group">
-                                                <label for="category">Post Category</label>
+                                                <label for="category">Categorías</label>
 
                                                 <select name="category" id="category" class="form-control">
-                                                    <option value="" style="display: none" selected>Select Category</option>
+                                                    <option value="" style="display: none" selected>Seleciona una Categoría</option>
                                                     @foreach($categories as $c)
                                                     <option value="{{ $c->id }}" @if($post->category_id == $c->id) selected @endif> {{ $c->name }} </option>
                                                     @endforeach
@@ -57,10 +57,10 @@
                                             <div class="form-group">
                                                 <div class="row">
                                                     <div class="col-8">
-                                                        <label for="image">Image</label>
+                                                        <label for="image">Imagen</label>
                                                         <div class="custom-file">
                                                             <input type="file" name="image" class="custom-file-input" id="image">
-                                                            <label class="custom-file-label" for="image">Choose file</label>
+                                                            <label class="custom-file-label" for="image">Escoje un archivo</label>
                                                         </div>
                                                     </div>
                                                     <div class="text-right col-4">
@@ -71,7 +71,7 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label>Choose Post Tags</label>
+                                                <label>Etiquetas</label>
                                                 <div class="flex-wrap  d-flex">
                                                     @foreach($tags as $tag)
                                                     <div class="custom-control custom-checkbox" style="margin-right: 20px">
@@ -86,12 +86,12 @@
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="exampleInputPassword1">Description</label>
+                                                <label for="exampleInputPassword1">Descripción</label>
                                                 <textarea name="description" id="description" rows="4" class="form-control"
                                                     placeholder="Enter description">{{ $post->description }}</textarea>
                                             </div>
                                             <div class="form-group">
-                                                <button type="submit" class="btn btn-lg btn-primary">Update Post</button>
+                                                <button type="submit" class="btn btn-primary">Actualizar</button>
                                             </div>
                                         </form>
                                     </div>

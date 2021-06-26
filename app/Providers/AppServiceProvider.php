@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use App\Category;
-//use App\Setting;
+use App\Setting;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\View;
 
@@ -33,9 +33,7 @@ class AppServiceProvider extends ServiceProvider
         $categories = Category::take(5)->get();
         View::share('categories', $categories);
 
-       /**
-        * $setting = Setting::first();
-        *View::share('setting', $setting);
-        */
+        $setting = Setting::first();
+        View::share('setting', $setting);
     }
 }

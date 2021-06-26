@@ -23,7 +23,7 @@ class FrontEndController extends Controller
         $firstfooterPosts2 = $footerPosts->splice(0, 2);
         $lastFooterPost = $footerPosts->splice(0, 1);
 
-        $recentPosts = Post::with('category', 'user')->orderBy('created_at', 'DESC')->paginate(9);
+        $recentPosts = Post::with('category', 'user')->orderBy('created_at', 'DESC')->paginate(5);
         return view('website.home', compact(['posts', 'recentPosts', 'firstPosts2', 'middlePost', 'lastPosts', 'firstFooterPost', 'firstfooterPosts2', 'lastFooterPost']));
     }
 

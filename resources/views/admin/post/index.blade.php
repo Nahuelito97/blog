@@ -7,11 +7,11 @@
         <div class="container-fluid">
             <div class="mb-2 row">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Post List</h1>
+                    <h1 class="m-0 text-dark">Lista de Publicaciones</h1>
                 </div><!-- /.col -->
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item active">Post list</li>
+                        <li class="breadcrumb-item active">Lista de Publicaciones</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->
@@ -27,8 +27,8 @@
                     <div class="card">
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
-                                <h3 class="card-title">Post List</h3>
-                                <a href="{{ route('post.create') }}" class="btn btn-primary">Create Post</a>
+                                <h3 class="card-title">Lista de Publicaciones</h3>
+                                <a href="{{ route('post.create') }}" class="btn btn-primary">Crear</a>
                             </div>
                         </div>
                         <!-- /.card-header -->
@@ -37,13 +37,13 @@
                                 <thead>
                                     <tr>
                                         <th style="width: 10px">#</th>
-                                        <th>Image</th>
-                                        <th>Title</th>
-                                        <th>Category</th>
-                                        <th>Tags</th>
-                                        <th>Author</th>
-                                        <th style="width: 130px">Created Date</th>
-                                        <th style="width: 40px">Action</th>
+                                        <th>Imagen</th>
+                                        <th>Titulo</th>
+                                        <th>Categoría</th>
+                                        <th>Etiquetas</th>
+                                        <th>Autor</th>
+                                        <th style="width: 130px">Fecha Creación</th>
+                                        <th style="width: 40px">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -66,10 +66,9 @@
                                             <td>{{ $post->user->name }}</td>
                                             <td style="width: 130px">{{ $post->created_at->format('d M, Y') }}</td>
                                             <td class="d-flex">
-                                                <a href="{{ route('post.show', [$post->id]) }}" class="mr-1 btn btn-sm btn-success"> <i class="fas fa-eye"></i> </a>
-                                                <a href="{{ route('post.edit', [$post->id]) }}" class="mr-1 btn btn-sm btn-primary"> <i class="fas fa-edit"></i> </a>
-                                                <a href="{{ route('website.post', [$post->slug]) }}" target="_blank" class="mr-1 btn btn-sm btn-dark"> <i class="fas fa-link"></i> </a>
-                                                <form action="{{ route('post.destroy', [$post->id]) }}" class="mr-1" method="POST">
+                                                <a href="{{ route('post.show', [$post->id]) }}" class="mr-1 btn btn-sm btn-success" title="Ver"> <i class="fas fa-eye"></i> </a>
+                                                <a href="{{ route('post.edit', [$post->id]) }}" class="mr-1 btn btn-sm btn-primary" title="Editar"> <i class="fas fa-edit"></i> </a>
+                                                <form action="{{ route('post.destroy', [$post->id]) }}" class="mr-1" method="POST" title="Eliminar">
                                                     @method('DELETE')
                                                     @csrf
                                                     <button type="submit" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </button>

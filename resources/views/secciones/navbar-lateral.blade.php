@@ -39,7 +39,7 @@
             <a href="{{ route('category.index') }}" class="nav-link {{ (request()->is('admin/category*')) ? 'active': '' }}">
               <i class="nav-icon fas fa-tags"></i>
               <p>
-                Categories
+                Categorias
               </p>
             </a>
           </li>
@@ -47,7 +47,7 @@
             <a href="{{ route('tag.index') }}" class="nav-link {{ (request()->is('admin/tag*')) ? 'active': '' }}">
               <i class="nav-icon fas fa-tag"></i>
               <p>
-                Tags
+                Etiquetas
               </p>
             </a>
           </li>
@@ -55,15 +55,15 @@
             <a href="{{ route('post.index') }}" class="nav-link {{ (request()->is('admin/post*')) ? 'active': '' }}">
               <i class="nav-icon fas fa-pen-square"></i>
               <p>
-                Post
+                Publicaciones
               </p>
             </a>
           </li>
           <li class="mt-auto nav-item">
-            <a href="#" class="nav-link {{ (request()->is('admin/contact*')) ? 'active': '' }}">
+            <a href="{{ route('contact.index') }}" class="nav-link {{ (request()->is('admin/contact*')) ? 'active': '' }}">
               <i class="nav-icon fas fa-envelope"></i>
               <p>
-                Messages
+               Mensajes
               </p>
             </a>
           </li>
@@ -71,24 +71,17 @@
             <a href="{{ route('user.index') }}" class="nav-link {{ (request()->is('admin/user*')) ? 'active': '' }}">
               <i class="nav-icon fas fa-user"></i>
               <p>
-                User
+                Usuarios
               </p>
             </a>
           </li>
-          <li class="mt-auto nav-item">
-            <a href="#" class="nav-link {{ (request()->is('admin/setting')) ? 'active': '' }}">
-              <i class="nav-icon fas fa-cog"></i>
-              <p>
-                Setting
-              </p>
-            </a>
-          </li>
-          <li class="nav-header">Your Account</li>
+
+          <li class="nav-header">Mi cuenta</li>
           <li class="mt-auto nav-item">
             <a href="{{ route('user.profile') }}" class="nav-link {{ (request()->is('admin/profile')) ? 'active': '' }}">
               <i class="nav-icon far fa-user"></i>
               <p>
-                Your Profile
+                Perfil
               </p>
             </a>
           </li>
@@ -96,17 +89,11 @@
             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="nav-link">
               <i class="nav-icon fas fa-sign-out-alt"></i>
               <p>
-                Logout
+                Salir
               </p>
             </a>
           </li>
-          <li class="mt-auto nav-item">
-            <a href="#" class="text-white btn btn-primary" target="_blank">
-              <p class="mb-0">
-                Sitio Web
-              </p>
-            </a>
-          </li>
+
         </ul>
       </nav>
       <!-- /.sidebar-menu -->

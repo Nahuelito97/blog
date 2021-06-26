@@ -8,14 +8,9 @@
         <div class="container-fluid">
             <div class="mb-2 row">
                 <div class="col-sm-6">
-                    <h1 class="m-0 text-dark">Category List</h1>
+                    <h1 class="m-0 text-dark">Lista Categorias</h1>
                 </div><!-- /.col -->
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
-                        <li class="breadcrumb-item active">Category list</li>
-                    </ol>
-                </div><!-- /.col -->
+               
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
@@ -42,7 +37,7 @@
                                         <th class="min-tablet">Nombre</th>
                                         <th>Slug</th>
 
-                                        <th style="width: 40px">Action</th>
+                                        <th style="width: 40px">Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -54,11 +49,11 @@
                                             <td>{{ $category->slug }}</td>
 
                                             <td class="d-flex">
-                                                <a href="{{ route('category.edit', [$category->id]) }}" class="mr-1 btn btn-sm btn-primary"> <i class="fas fa-edit"></i> </a>
+                                                <a href="{{ route('category.edit', [$category->id]) }}" class="mr-1 btn btn-sm btn-primary" title="Editar"> <i class="fas fa-edit"></i> </a>
                                                 <form action="{{ route('category.destroy', [$category->id]) }}" class="mr-1" method="POST">
                                                     @method('DELETE')
                                                     @csrf
-                                                    <button type="submit" class="btn btn-sm btn-danger"> <i class="fas fa-trash"></i> </button>
+                                                    <button type="submit" class="btn btn-sm btn-danger" title="Eliminar"> <i class="fas fa-trash"></i> </button>
                                                 </form>
                                                 {{-- <a href="{{ route('category.show', [$category->id]) }}" class="mr-1 btn btn-sm btn-success"> <i class="fas fa-eye"></i> </a> --}}
                                             </td>
