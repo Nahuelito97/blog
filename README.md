@@ -79,9 +79,93 @@ Enlace:
     
     c/xampp/htdocs/
 
-Colocar el proyecto y abrirlo con un editor de código.
+**Paso 6:** Crear una base de datos en postgres.
+
+**Paso 7:** 
+- Abrir la carpeta del proyecto con un editor de código.
+- Cambiar el nombre del archivo ".env.example" por ".env".
+- En el archivo .env modificar los siguiente:
+    ![](figuras/MYS.jpg)
+
+    por esto
+
+    ![](figuras/env.jpg)
+
+    par poder correr este proyecto.
+    
+- Abrir una consola en el editror de código y ejecutar los siguientes comandos:
+    ```bash
+    # instala las dependencias de composer
+    composer install
+
+    # comentar esto en AppServiceProvider.php
+    // $categories = Category::take(5)->get();
+    // View::share('categories', $categories);
+    
+    #actualizar composer
+    composer update
+    composer dump-autoload
+
+    #generar la clave de la aplicación
+    php artisan key:generate
+
+    #migrar las tablas a la base de datos y genera los seeders
+    php artisan migrate --seed
+
+    # abiliatar base dedatos query en AppServiceProvider.php 
+    $categories = Category::take(5)->get();
+    View::share('categories', $categories);
+
+    $setting = Setting::first();
+    View::share('setting', $setting);
+
+    #para ejecutar la aplicación 
+    php artisan serve
+    ``` 
+- Luego de haber ejecutdo todos estos comandos, ingresar desde el navegador a http://127.0.0.1:8000/
 
 
+---
+# Investigación para poder usar postgreSQL como base de datos para poder crear un blog
+
+**Paso 1:** En el editor de código lo primero es ir al archivo .env ubicado en la raíz de nuestro proyecto.
+
+![](figuras/example.jpg)
+
+Ya en el archivo se deben de cambiar los parámetros de la base de datos a la cual deseamos tener la conexión.
+
+![](figuras/env.jpg)
+
+Despues de haber cambiado nuestra configuración debemos de dirigirnos al siguiente Archivo "database.php" ubicado en la siguiente Ruta: "Config > database.php" en ese archivo debemos de buscar y reemplazar los siguientes parametros.
+
+    'default'=>env('BD_CONNECTION','pgsql'),
+una ves finalizado el cambio en nuestro php.ini debemos de habilitar los drivers de conexion de php para Postgres.
+
+![](figuras/habilitar.jpg)
+
+debemos de habilitar los siguientes:            
+
+- php_pdo_pgsql
+- php_pgsql
+
+Luego en la consola finalizamos limpiando la cache:
+```bash
+    composer dump-autoload
+
+    php artisan view:clear
+
+    php artisan cache:clear
+
+    php artisan migrate
+```
+
+
+
+# Capturas del la web y del panel administrativo.
+
+
+
+![](figuras/.jpg)
 
 
 
