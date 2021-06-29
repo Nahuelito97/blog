@@ -6,25 +6,25 @@ use Session;
 use App\Tag;
 use App\User;
 use App\Post;
-use App\Contact;
 use App\Category;
 use Illuminate\Http\Request;
 
 class FrontEndController extends Controller
 {
-    public function home(){
+    public function home(Request $request){
+
+        $titulo = $request->get('buscarpor');
+
+        $consulta=Post::select('posts.*');
+
+
+        $posts = $consulta->where('title', 'like', "%$titulo%")->paginate(6);
+
         $posts = Post::with('category', 'user')->orderBy('created_at', 'DESC')->take(5)->get();
         $firstPosts2 = $posts->splice(0, 2);
-        $middlePost = $posts->splice(0, 1);
-        $lastPosts = $posts->splice(0);
 
-        $footerPosts = Post::with('category', 'user')->inRandomOrder()->limit(4)->get();
-        $firstFooterPost = $footerPosts->splice(0, 1);
-        $firstfooterPosts2 = $footerPosts->splice(0, 2);
-        $lastFooterPost = $footerPosts->splice(0, 1);
-
-        $recentPosts = Post::with('category', 'user')->orderBy('created_at', 'DESC')->paginate(5);
-        return view('website.home', compact(['posts', 'recentPosts', 'firstPosts2', 'middlePost', 'lastPosts', 'firstFooterPost', 'firstfooterPosts2', 'lastFooterPost']));
+        $recentPosts = Post::with('category', 'user')->orderBy('created_at', 'DESC')->paginate(8);
+        return view('website.home', compact(['posts', 'recentPosts', 'firstPosts2']));
     }
 
     public function about(){
@@ -47,7 +47,7 @@ class FrontEndController extends Controller
     public function tag($slug){
         $tag = Tag::where('slug', $slug)->first();
         if($tag){
-            $posts = $tag->posts()->orderBy('created_at', 'desc')->paginate(9);
+            $posts = $tag->posts()->orderBy('created_at', 'desc')->paginate(4);
 
             return view('website.tag', compact(['tag', 'posts']));
         }else {
@@ -55,9 +55,7 @@ class FrontEndController extends Controller
         }
     }
 
-    public function contact(){
-            return view('website.contact');
-    }
+
 
     public function post($slug){
         $post = Post::with('category', 'user')->where('slug', $slug)->first();
@@ -79,18 +77,5 @@ class FrontEndController extends Controller
         }
     }
 
-    public function send_message(Request $request)
-    {
-        $this->validate($request, [
-            'name' => 'required|max:200',
-            'email' => 'required|email|max:200',
-            'subject' => 'required|max:255',
-            'message' => 'required|min:100',
-        ]);
 
-        $contact = Contact::create($request->all());
-
-        Session::flash('message-send', 'Contact message send successfully');
-        return redirect()->back();
-    }
 }

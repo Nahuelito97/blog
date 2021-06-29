@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="{{ asset('front-end/assets/css/slicknav.min.css') }}" type="text/css">
     <link rel="stylesheet" href="{{ asset('front-end/assets/css/style.css') }}" type="text/css">
 
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{ asset('home/css/styles.css') }}" rel="stylesheet" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('posts/css/bootstrap.css') }}">
@@ -74,6 +76,11 @@
     </script>
     <script src="{{ asset('posts/js/bootstrap.min.js') }}"></script>
     <script id="dsq-count-scr" src="//nahucoodes.disqus.com/count.js" async></script>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{{ asset('home/js/scripts.js') }}"></script>
 </body>
 
 </html>

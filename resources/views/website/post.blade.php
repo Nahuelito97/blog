@@ -7,25 +7,23 @@
     <!-- Sección Slider -->
     <div class="text-white container-fluid slider d-flex flex-column justify-content-center align-items-center">
         <div class="text-center">
-            <h1 class="display-4">{{ $post->title }}</h1>
-            <p class="lead hidden-xs-down"> <span class="badge badge-success text-uppercase">{{ $post->category->name }}
-                </span>
-            </p>
+            <h1 class=" text-md-center h2"></h1>
         </div>
     </div>
+
     <!-- Fin Sección Slider -->
     <!-- Main -->
     <div class="container">
 
         <div class="row">
+
             <!-- Sección detalles de un post -->
             <div class="mb-5 col-12 col-lg-9">
                 <div class="shadow h-100">
-                    <img src="{{ $post->image }}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <span class="badge badge-primary text-uppercase">{{ $post->created_at->format('M d, Y') }}</span>
-                        <div class="blog-quote" <p class="card-text">{{ $post->description }}</p>
-                        </div>
+                    <div class="card-header">
+                        <h1 class="tdb-title-text">{{ $post->title }}</h1>
+                        <strong class="text-uppercase"></strong>
+                        <br>
                         <span class="badge badge-danger text-uppercase">Categorias: </span>
                         <span class="badge badge-success text-uppercase">{{ $post->category->name }}
                         </span>
@@ -38,10 +36,14 @@
                         @endif
                         <br>
                     </div>
+
+                    <img src="{{ $post->image }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <span class="badge badge-primary text-uppercase">{{ $post->created_at->format('M d, Y') }}</span>
+                        <div class="blog-quote" <p class="card-text">{{ $post->description }}</p>
+                        </div>
+                    </div>
                     <div class="card-footer text-muted">
-
-
-
                         <!-- Preguntas y dudas -->
                         <div class="mb-2">
                             <div class="card">
@@ -135,28 +137,6 @@
                     </div>
                 </div>
 
-                <!-- Cards -->
-                <div class="mb-2">
-                    <div class="text-center text-white card">
-                        <div class="shadow h-100">
-                            <div class="card-header text-uppercase"><span class="badge badge-primary">Categorias: </span>
-                            </div>
-                            <div class="card-body">
-                                <p class="card-text">
-                                    @foreach ($categories as $category)
-                                        <li>
-                                            <a href="{{ route('website.category', ['slug' => $category->slug]) }}">
-                                                <span class="badge badge-success text-uppercase">
-                                                    {{ $category->name }}
-                                                </span>
-                                            </a>
-                                        </li>
-                                    @endforeach
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <!-- Fin Cards -->
                 <div class="mb-2">
                     <div class="text-center card">
@@ -171,9 +151,13 @@
                                         <div class="card-body">
                                             <span class="badge badge-success text-uppercase">{{ $post->category->name }}
                                             </span>
-                                            <span class="badge badge-success text-uppercase"> {{ $post->title }} </span>
-
+                                            <span class="badge badge-success text-uppercase"> {{ Str::limit($post->title, 10) }}.. </span>
                                         </div>
+                                    </div>
+                                    <div class="card-footer text-muted">
+                                        <a href="{{ route('website.post', ['slug' => $post->slug]) }}"
+                                            class="btn btn-outline-success">Leer
+                                            Más</a>
                                     </div>
                                 </div>
                             @endforeach

@@ -6,28 +6,21 @@
                 <div>
 
                     <div class="footer-logo">
-                        <span class="text-white text-uppercase">Blog</span>
                         <img src="{{ asset('front-end/assets/img/logo/brand.png') }}" class="rounded-circle"
                             alt="Cinque Terre" width="100" height="80">
 
                     </div>
-                    <span class="text-white text-uppercase">Bootstraps custom button styles for actions in forms,
-                        dialogs, and more with support for multip....
+                    <span class="text-white">¿Qué es Nahu Coodes?
+                        <br>
+                        Nahu Coodes es un blog
+                        para promover el conocimiento informático,
+                        compartir tips, noticias y articulos relacionados al mundo de la informatica
+                        desarrollo web y demas..
+
                     </span>
                 </div>
             </div>
-            <div class="col-lg-2 offset-lg-1">
-                <div class="footer-widget">
-                    <span class="text-white text-uppercase">informacion </span>
-                    <ul>
-                        <li><a target="_blank" href="{{ route('website.about') }}">  <span class="text-white text-uppercase">acerca</span></a></li>
 
-                        <li><a target="_blank" href="{{ route('website.contact') }}">  <span class="text-white text-uppercase">contacto</span></a></li>
-
-                    </ul>
-
-                </div>
-            </div>
             <div class="col-lg-2">
 
             </div>

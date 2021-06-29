@@ -59,14 +59,7 @@
               </p>
             </a>
           </li>
-          <li class="mt-auto nav-item">
-            <a href="{{ route('contact.index') }}" class="nav-link {{ (request()->is('admin/contact*')) ? 'active': '' }}">
-              <i class="nav-icon fas fa-envelope"></i>
-              <p>
-               Mensajes
-              </p>
-            </a>
-          </li>
+
           <li class="mt-auto nav-item">
             <a href="{{ route('user.index') }}" class="nav-link {{ (request()->is('admin/user*')) ? 'active': '' }}">
               <i class="nav-icon fas fa-user"></i>

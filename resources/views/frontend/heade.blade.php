@@ -1,37 +1,50 @@
-<!-- Menú de navegación -->
-<div class="container-fluid bg-inverse fixed-top">
-    <nav class="container navbar navbar-toggleable-sm navbar-inverse">
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
-            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+@section('css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+@endsection
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+
         <a class="navbar-brand" href="{{ route('website') }}">
             <img src="{{ asset('front-end/assets/img/logo/brand.png') }}" width="30" height="30"
                 class="align-top d-inline-block" alt="">
-                <span class="text-uppercase">NahuCodes</span>
+            <span>NahuCodes</span>
         </a>
-
-
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="mb-2 navbar-nav ms-auto mb-lg-0">
+                <a class="nav-link active" aria-current="page" target="_blank"
+                    href="{{ route('website.about') }}">Acerca</a>
+            </ul>
 
 
         </div>
-        <div class="text-right col-12 col-md-4">
-            <div class="container-fluid">
-                <form action="#">
-                    <div class="input-group" data-children-count="1">
-                        <input name="search" type="text" class="form-control ui-autocomplete-input" id="search"
-                            placeholder="Bucar un artículo" aria-label="" aria-describedby="basic-addon1"
-                            autocomplete="off">
-                        <div class="input-group-append">
-                            <button class="btn btn-danger" type="button">Buscar</button>
-                        </div>
-                    </div>
-                </form>
+    </div>
+</nav>
 
-            </div>
-        </div>
-    </nav>
-</div>
-<!-- Fin Menú de navegación -->
+@section('js')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $(function() {
+            $("#search").autocomplete({
+                source: function(request, response) {
+                    $.ajax({
+                        url: "{{ route('search.posts') }}",
+                        dataType: "json",
+                        data: {
+                            term: request.term
+                        },
+                        success: function(data) {
+                            response(data);
+                        }
+                    });
+                }
+
+            });
+        });
+    </script>
+@endsection

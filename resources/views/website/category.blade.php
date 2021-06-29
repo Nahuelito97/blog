@@ -7,11 +7,7 @@
         <div class="py-5 col-12 col-md-10 col-lg-8">
             <div class="text-center">
                 <strong>
-                    <h1 class=" text-md-center h2">Bienvenido a NahuCoodes, mi sitio personal en el que podras encontrar
-                        información sobre ciencia y tecnologia.</h1>
-                    <img src="{{ asset('front-end/assets/img/logo/brand.png') }}" class="rounded-circle"
-                        alt="Cinque Terre" width="50" height="40">
-                    <span class="badge badge-danger text-uppercase">NahuCoodes</span>
+                    <h1 class=" text-md-center h2">Bienvenido a NahuCoodes.</h1>
                 </strong>
             </div>
         </div>
