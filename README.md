@@ -7,7 +7,7 @@
 
 ## Grupo
 
-    . Wagner Nahuel
+    Wagner Nahuel
 
 
 ## Tema a investigar
@@ -15,16 +15,18 @@
     El tema propuesto para el trabajo de invesigación fue hacer un blog, el cual tendra las sigientes caracteristicas.
 
 ## Caracteristicas
-    La pagina web tendra dos secciones una parte sera la web en si donde se podran ver las publicaciones, detalles de los posts, categorías y etiquetas. 
-    Ademas se podran realizar comentarios sobre cada post.
-    En el panel administrativo nos encontraremos con las siguientes caracteristicas:
 
-    * Un panel donde se veran todas las secciones del administrador.
-    * Categorías, en esta sección se podra ver una lista con las categorias, podremos crear nuevas y agregar una descripción.
-    * Etiquetas, en esta sección se podra ver una lista con las etiquetas, podremos crear nuevas y agregar una descripción.
-    * Posts, en esta sección se podra ver una lista con todos los posts, podremos editar, crear y eliminar las publicaciones.
-    * Ver los usuarios que tenemos en el sistema, solo se permitira un usuario administrador, por este motivio no se podran realizar registros de nuevos usuarios.
-    * Ver el perfil del usuario administrador, con todos sus datos.
+La pagina web tendra dos secciones una parte sera la web en si donde se podran ver las publicaciones, detalles de los posts, categorías y etiquetas. 
+
+Ademas se podran realizar comentarios sobre cada post.
+En el panel administrativo nos encontraremos con las siguientes caracteristicas:
+
+- Un panel donde se veran todas las secciones del administrador.
+- Categorías, en esta sección se podra ver una lista con las categorias, podremos crear nuevas y agregar una descripción.
+- Etiquetas, en esta sección se podra ver una lista con las etiquetas, podremos crear nuevas y agregar una descripción.
+- Posts, en esta sección se podra ver una lista con todos los posts, podremos editar, crear y eliminar las publicaciones.
+- Ver los usuarios que tenemos en el sistema, solo se permitira un usuario administrador, por este motivio no se podran realizar registros de nuevos usuarios.
+- Ver el perfil del usuario administrador, con todos sus datos.
 
     
 ---
@@ -85,6 +87,7 @@ Enlace:
 - Abrir la carpeta del proyecto con un editor de código.
 - Cambiar el nombre del archivo ".env.example" por ".env".
 - En el archivo .env modificar los siguiente:
+  
     ![](figuras/MYS.jpg)
 
     por esto
@@ -116,8 +119,7 @@ Enlace:
     $categories = Category::take(5)->get();
     View::share('categories', $categories);
 
-    $setting = Setting::first();
-    View::share('setting', $setting);
+   
 
     #para ejecutar la aplicación 
     php artisan serve
@@ -126,7 +128,8 @@ Enlace:
 
 
 ---
-# Investigación para poder usar postgreSQL como base de datos para poder crear un blog
+# Investigación para poder usar postgreSQL como base de datos para poder crear un blog, usando bootstap
+
 
 **Paso 1:** En el editor de código lo primero es ir al archivo .env ubicado en la raíz de nuestro proyecto.
 
@@ -159,13 +162,30 @@ Luego en la consola finalizamos limpiando la cache:
     php artisan migrate
 ```
 
+Para poder utilizar bootstrap debemos de dirijirnos a la web en el siguiente enlace:
+
+- https://getbootstrap.com/docs/4.6/getting-started/introduction/
+
+Importar los siguientes CDN.
+
+CSS: enlace a a bootstrap
+- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
 
 
-# Capturas del la web y del panel administrativo.
+JS: enlace a a bootstrap
+- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+## Laravel
+
+El marco PHP para artesanos web
+Laravel es un marco de aplicación web con una sintaxis elegante y expresiva. Ya hemos sentado las bases, permitiéndole crear sin preocuparse por las pequeñas cosas.
+
+## Esta captura muestra una parte del sitio desarrollado con Bootstrap.
 
 
 
-![](figuras/.jpg)
+![](figuras/posts.jpg)
 
 
 
