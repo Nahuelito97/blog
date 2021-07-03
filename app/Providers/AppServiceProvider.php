@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
         $categories = Category::take(5)->get();
         View::share('categories', $categories);
 
-        $setting = Setting::first();
-        View::share('setting', $setting);
+        //$setting = Setting::first();
+        //View::share('setting', $setting);
     }
 }
