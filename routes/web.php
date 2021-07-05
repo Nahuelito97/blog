@@ -42,6 +42,3 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::post('setting', 'SettingController@update')->name('setting.update');
 
 });
-
-
-Route::get('search/posts', [SearchController::class, 'posts'])->name('search.posts');

@@ -12,11 +12,11 @@
 
 ## Tema a investigar
 
-    El tema propuesto para el trabajo de invesigación fue hacer un blog, el cual tendra las sigientes caracteristicas.
+    El tema propuesto para el trabajo de invesigación fue hacer un blog, el cual tendra las siguientes caracteristicas.
 
 ## Caracteristicas
 
-La pagina web tendra dos secciones una parte sera la web en si donde se podran ver las publicaciones, detalles de los posts, categorías y etiquetas. 
+La pagina web tendra dos secciones una parte sera la web en donde se podran ver las publicaciones, detalles de los posts, categorías y etiquetas. 
 
 Ademas se podran realizar comentarios sobre cada post.
 En el panel administrativo nos encontraremos con las siguientes caracteristicas:
@@ -50,7 +50,7 @@ La pagina web esta diseñada para poder compartir información de interes a los 
 
 A continuacion se estara indicando como usar y que se debe de hacer para poder usar y correr esta web de manera local en Windows o en Linux.
 
-**Paso 1:** Tener descargado un servidor, como ser xampp. Descargar esta versión 7.3.28 / PHP 7.3.28
+**Paso 1:** Tener descargado un servidor, como ser xampp, lamp, Descargar esta versión 7.3.28 / PHP 7.3.28
 
 Link de descarga:
     
@@ -94,11 +94,11 @@ Enlace:
 
     ![](figuras/env.jpg)
 
-    par poder correr este proyecto.
+    para poder correr este proyecto.
     
 - Abrir una consola en el editror de código y ejecutar los siguientes comandos:
     ```bash
-    # instala las dependencias de composer
+    #instala las dependencias de composer
     composer install
 
     # comentar esto en AppServiceProvider.php
@@ -115,11 +115,9 @@ Enlace:
     #migrar las tablas a la base de datos y genera los seeders
     php artisan migrate --seed
 
-    # abiliatar base dedatos query en AppServiceProvider.php 
+    # abiliatar en AppServiceProvider.php 
     $categories = Category::take(5)->get();
     View::share('categories', $categories);
-
-   
 
     #para ejecutar la aplicación 
     php artisan serve
@@ -131,18 +129,34 @@ Enlace:
 # Investigación para poder usar postgreSQL como base de datos para poder crear un blog, usando bootstap
 
 
-**Paso 1:** En el editor de código lo primero es ir al archivo .env ubicado en la raíz de nuestro proyecto.
+**Paso 1:** En el editor de código lo primero que debemos de hacer luego de haber creado un nuevo proyecto es lo siguiente, ir al archivo .env ubicado en la raíz de nuestro proyecto.
 
 ![](figuras/example.jpg)
 
 Ya en el archivo se deben de cambiar los parámetros de la base de datos a la cual deseamos tener la conexión.
 
+Al crear un nuevo proyecto viene por defecto la configuración para conectarse a MYSQL, como muestra la siguiente imagen.
+
+
+![](figuras/MYS.jpg)
+
+debemos de cambiar los parametros de conexión por lo que nos muestra la siguiente imagen.
+
 ![](figuras/env.jpg)
 
 Despues de haber cambiado nuestra configuración debemos de dirigirnos al siguiente Archivo "database.php" ubicado en la siguiente Ruta: "Config > database.php" en ese archivo debemos de buscar y reemplazar los siguientes parametros.
+```bash
+   #Debemos de cambiar la conexón por defecto 
+   'default' => env('DB_CONNECTION', 'mysql'),
 
+   #a
+
+   #Esta conexión para poder conectarlo a postgres.
     'default'=>env('BD_CONNECTION','pgsql'),
-una ves finalizado el cambio en nuestro php.ini debemos de habilitar los drivers de conexion de php para Postgres.
+
+``` 
+  
+una ves finalizado el cambio, en nuestro php.ini debemos de habilitar los drivers de conexión de php para Postgres.
 
 ![](figuras/habilitar.jpg)
 
@@ -181,6 +195,11 @@ Laravel es un marco de aplicación web con una sintaxis elegante y expresiva. Ya
 ![](figuras/posts.jpg)
 
 
+
+
+**Este blog seguira en constante desarrollo y con actualizaciones a nivel Front-End y Back-End ya que el mismo sera utilizado para comartir información y conocimientos que vaya adquiriendo a medida que vaya desarrollando mas sitios webs.**
+
+**Este blog sera anexado a mi portafolio el cual se encuentra en desarrollo.**
 
 <img src="./public/img/brand.png" class="rounded-circle" alt="Cinque Terre" width="100" height="100"> 
 

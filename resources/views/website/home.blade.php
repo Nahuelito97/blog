@@ -6,25 +6,23 @@
 
 
 @section('content')
-    <!-- Sección Slider -->
-    <div class="text-white container-fluid slider d-flex flex-column justify-content-center align-items-center">
-
-        <div class="py-5 col-12 col-md-10 col-lg-8">
-            <div class="text-center">
-                <strong>
-                    <br>
-                    <h1 class=" text-md-center h2">Bienvenido a NahuCoodes.</h1>
-                </strong>
-            </div>
-        </div>
-    </div>
-    <!-- Fin Sección Slider -->
+        <!-- Header -->
+    <header id="header" class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="text-container">
+                        <h1 class="h1-large">Nahu Coodes.</h1>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of header -->
+    <!-- end of header -->
     <br>
-
     <!-- Page content-->
     <div class="container">
         <div class="row">
-
 
             @foreach ($firstPosts2 as $post)
                 <div class="col-md-4">

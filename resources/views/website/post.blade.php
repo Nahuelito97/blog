@@ -3,13 +3,19 @@
 @section('title', 'Detalles')
 
 @section('content')
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Detalles del Post</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
 
-    <!-- Sección Slider -->
-    <div class="text-white container-fluid slider d-flex flex-column justify-content-center align-items-center">
-        <div class="text-center">
-            <h1 class=" text-md-center h2"></h1>
-        </div>
-    </div>
+    <br>
 
     <!-- Fin Sección Slider -->
     <!-- Main -->

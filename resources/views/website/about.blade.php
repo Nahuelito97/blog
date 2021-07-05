@@ -3,39 +3,47 @@
 @section('title', 'About')
 
 @section('content')
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                          <h1 class="mb-0 text-center h2 text-secondary text-uppercase">sobre mi</h1>                        
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
 
-    <div class="text-white container-fluid slider d-flex flex-column justify-content-center align-items-center">
-        <div class="py-5 col-12 col-md-10 col-lg-8">
-            <div class="text-center">
-                <strong>
-                    <h1 class=" text-md-center h2">Bienvenido a NahuCoodes.</h1>
-                </strong>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-          <div class="row">
-            <!-- Sección de noticias -->
-            <div class="mb-5 col-12 col-lg-9">
-
-              <div class="mb-5 row">
-                <div class="col-3">
-                  <img class="img-fluid" src="@if ($user->image) {{ $user->image }} @else
-                  {{ asset('website/images/user.png') }} @endif" alt="">
-                </div>
-                <div class="col-9">
-                    <div class="text-center alert alert-primary" role="alert">
-                        <h1 class="mb-0 text-center h2 text-secondary text-uppercase">sobre mi</h1>
-                    </div>
-                    <h3 class="text-center text-uppercase">{{ $user->name }}.</h3>
-                    <div class="blog-quote" <p class="card-text">{{ $user->description }}</p>
-                    </div>
-                </div>
-
-              </div>
-            </div>
-          </div>
-      </div>
-    </div>
-
+    <br>
+    
+        <!-- About-->
+    <div id="about" class="basic-1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="text-container first">
+                        <div class="text-center alert alert-primary" role="alert">
+                            <h1 class="mb-0 text-center h2 text-secondary text-uppercase">{{ $user->name }}.</h1>                        
+                        </div>
+                       
+                        <div class="col-3">
+                            <img src="@if ($user->image) {{ $user->image }} @else
+                            {{ asset('website/images/user.png') }} @endif" class="rounded-circle" alt="Cinque Terre" width="50" height="40">
+                          </div>
+                        <p>{{ $user->description }}
+                        </p>
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+                <div class="col-lg-4">
+                    <div class="text-container second">
+                        <div class="time">2021 - PRESENTE</div>
+                        <h6>Freelance Web Developer</h6>
+                        <p>Trabajando en mi Portafolio y una Tienda en Linea</p>                        
+                    </div> <!-- end of text-container -->
+                </div> <!-- end of col -->
+              
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of basic-1 -->
+    <!-- end of about -->
 @endsection

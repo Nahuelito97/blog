@@ -3,25 +3,25 @@
 @section('title', 'Etiquetas')
 
 @section('content')
-    <div class="text-white container-fluid slider d-flex flex-column justify-content-center align-items-center">
-        <div class="py-5 col-12 col-md-10 col-lg-8">
-            <div class="text-center">
-                <strong>
-                    <h1 class=" text-md-center h2">Bienvenido a NahuCoodes, mi sitio personal en el que podras encontrar
-                        información sobre ciencia y tecnologia.</h1>
-                    <img src="{{ asset('front-end/assets/img/logo/brand.png') }}" class="rounded-circle"
-                        alt="Cinque Terre" width="50" height="40">
-                    <span class="badge badge-danger text-uppercase">NahuCoodes</span>
-                </strong>
-            </div>
-        </div>
-    </div>
+    <!-- Header -->
+    <header class="ex-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-10 offset-xl-1">
+                    <h1>Etiquetas</h1>
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </header> <!-- end of ex-header -->
+    <!-- end of header -->
+
+    <br>
+
     <div class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <h1 class="mb-0 text-center h2 text-secondary text-uppercase">tags</h1>
-                    <br>
+                    
                     <div class="text-center alert alert-primary" role="alert">
                         <strong class="text-uppercase">{{ $tag->name }}</strong>
                     </div>
@@ -46,7 +46,7 @@
                                     </div>
                                 </a>
                                 <div class="card-body">
-                                    <span class="badge badge-primary text-uppercase">{{ $post->title }}.</span>
+                                    <span class="badge badge-primary text-uppercase">{{ Str::limit($post->title, 10) }}..</span>
                                     <img src="@if ($post->user->image) {{ $post->user->image }}
                                 @else
                                     {{ asset('website/images/user.png') }} @endif"
