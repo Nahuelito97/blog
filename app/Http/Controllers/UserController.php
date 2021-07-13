@@ -6,11 +6,16 @@ use App\User;
 use Session;
 use Illuminate\Http\Request;
 
-class UserController extends Controller
-{
-    public function index(){
-        $users = User::latest()->paginate(20);
+use Spatie\Permission\Models\Role;
 
+
+class UserController extends Controller
+
+{
+    //public $search;
+
+    public function index(){
+        $users = User::paginate(10);
         return view('admin.user.index', compact('users'));
     }
 
@@ -37,10 +42,13 @@ class UserController extends Controller
     }
 
     public function edit(User $user){
-        return view('admin.user.edit', compact('user'));
+
+        $roles = Role::all();
+        return view('admin.user.edit', compact('user', 'roles'));
     }
 
     public function update(Request $request, User $user){
+        $user->roles()->sync($request->roles);
         $this->validate($request, [
             'name' => 'required|string|max:255',
             'email' => "required|email|unique:users,email, $user->id",
@@ -53,8 +61,7 @@ class UserController extends Controller
         $user->description = $request->description;
         $user->save();
 
-        Session::flash('success', 'User updated successfully');
-        return redirect()->back();
+        return redirect()->back()->with('info', 'Se han asignado los roles correctamente');
     }
 
     public function destroy(User $user){

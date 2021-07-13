@@ -29,6 +29,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{{ asset('posts/css/bootstrap.css') }}">
     <!-- Estilos en Css -->
+
+    <!-- cards css -->
+    <link rel="stylesheet" href="{{ asset('front-end/cadrs-posts/css/custom.css')}}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+        integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ asset('front-end/cadrs-posts/css/custom-style.css')}}">
+
     <style>
         .slider {
             background: url("{{ asset('posts/images/bg-3.png') }}");
@@ -45,7 +52,7 @@
     <link href="{{ asset('front-end/header/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('front-end/header/css/fontawesome-all.css') }}" rel="stylesheet">
 	<link href="{{ asset('front-end/header/css/styles.css') }}" rel="stylesheet">
-	
+
 </head>
 
 <body data-spy="scroll" data-target=".fixed-top">

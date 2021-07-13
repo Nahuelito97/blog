@@ -12,7 +12,6 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{ route('post.index') }}">Lista Publicaciones</a></li>
-                        <li class="breadcrumb-item active">Crear Publicaciones</li>
                     </ol>
                 </div><!-- /.col -->
             </div><!-- /.row -->

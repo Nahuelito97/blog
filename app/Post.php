@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Tag;
 use Carbon\Carbon;
 use Illuminate\Support\Str;
 
@@ -25,6 +26,6 @@ class Post extends Model
 
     public function tags()
     {
-        return $this->belongsToMany('App\Tag');
+        return $this->belongsToMany(Tag::class);
     }
 }

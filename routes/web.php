@@ -30,6 +30,7 @@ Route::get('/post/{slug}', 'FrontEndController@post')->name('website.post');
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/dashboard','DashboardController@index')->name('dashboard');
 
+    //rutas para las demas secciones del sistema
     Route::resource('category', 'CategoryController');
     Route::resource('tag', 'TagController');
     Route::resource('post', 'PostController');
@@ -42,3 +43,4 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::post('setting', 'SettingController@update')->name('setting.update');
 
 });
+

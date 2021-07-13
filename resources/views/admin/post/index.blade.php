@@ -28,7 +28,6 @@
                         <div class="card-header">
                             <div class="d-flex justify-content-between align-items-center">
                                 <h3 class="card-title">Lista de Publicaciones</h3>
-                                <a href="{{ route('post.create') }}" class="btn btn-primary">Crear</a>
                             </div>
                         </div>
                         <!-- /.card-header -->

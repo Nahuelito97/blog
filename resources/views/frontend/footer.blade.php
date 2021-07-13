@@ -30,7 +30,8 @@
 
                     <div class="footer-left">
                         <div class="footer-social">
-                            <a target="_blank" href="https://www.instagram.com/nahue_wagner/"><i class="fa fa-instagram"></i></a>
+                            <a target="_blank" href="https://www.instagram.com/nahue_wagner/"><i
+                                    class="fa fa-instagram"></i></a>
                             <a target="_blank" href="https://github.com/Nahuelito97"><i class="fa fa-github"></i></a>
                         </div>
                     </div>
@@ -55,4 +56,24 @@
             </div>
         </div>
     </div>
+    <div class="row" style="font-size: 12px;">
+        <div class="col pl-5">
+            <img src="images/logo-coral.svg" width="100px" class="mr-5"> <span>Copyright © 2018 Udemy, Inc.</span>
+        </div>
+        <div class="col">
+            <ul class="nav justify-content-end">
+                <li class="nav-item">
+                    <a class="nav-link active text-info" href="#">Terms</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" href="#">Privacy and Cookie Police</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-info" href="#">Intellectual Property</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
 </footer>
+

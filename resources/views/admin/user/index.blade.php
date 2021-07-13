@@ -24,12 +24,15 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
+                
                     <div class="card">
                         <div class="card-header">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <h3 class="card-title">Lista Usuarios</h3>
-                                <a href="{{ route('user.create') }}" class="btn btn-primary">Crear Usuarios</a>
-                            </div>
+                            <nav class="navbar navbar-light float-right">
+                                <form class="form-inline">
+                                    <input name="buscarpor" class="form-control mr-sm-2" type="search" placeholder="Buscar por nombre" aria-label="Search">
+                                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
+                                </form>
+                            </nav>                       
                         </div>
                         <!-- /.card-header -->
                         <div class="p-0 card-body">
@@ -68,7 +71,7 @@
                                     @else
                                         <tr>
                                             <td colspan="5">
-                                                <h5 class="text-center">No categories found.</h5>
+                                                <h5 class="text-center">No hay Usuarios.</h5>
                                             </td>
                                         </tr>
 
@@ -78,6 +81,10 @@
                         </div>
                         <!-- /.card-body -->
                         <div class="card-footer d-flex justify-content-center">
+                            <div class="d-flex justify-content-between align-items-center">
+                                
+                                <a href="{{ route('user.create') }}" class="btn btn-primary">Crear Usuarios</a>
+                            </div>
                             {{ $users->links() }}
                         </div>
                     </div>

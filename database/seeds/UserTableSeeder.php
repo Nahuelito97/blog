@@ -6,21 +6,14 @@ use App\User;
 
 class UserTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     *
-     * @return void
-     */
     public function run()
     {
+      User::create([
+        'name' => 'Nahuel Wagner',
+        'email' => 'nahuelito@gmail.com',
+        'password' => bcrypt('12345')
+      ])->assignRole('Admin');
 
-      $role_admin = Role::where('name','admin')->first();
-
-      $user = new User();
-      $user-> name = "Nahuel Wagner";
-      $user->email = "genius@gmail.com";
-      $user->password = bcrypt('12345');
-      $user->save();
-      $user->roles()->attach($role_admin);
+      factory(User::class, 50)->create();
     }
 }
