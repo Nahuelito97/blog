@@ -31,10 +31,10 @@
     <!-- Estilos en Css -->
 
     <!-- cards css -->
-    <link rel="stylesheet" href="{{ asset('front-end/cadrs-posts/css/custom.css')}}">
+    <link rel="stylesheet" href="{{ asset('front-end/cadrs-posts/css/custom.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
         integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('front-end/cadrs-posts/css/custom-style.css')}}">
+    <link rel="stylesheet" href="{{ asset('front-end/cadrs-posts/css/custom-style.css') }}">
 
     <style>
         .slider {
@@ -48,10 +48,12 @@
 
     <!-- Styles Header -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
+        rel="stylesheet">
     <link href="{{ asset('front-end/header/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('front-end/header/css/fontawesome-all.css') }}" rel="stylesheet">
-	<link href="{{ asset('front-end/header/css/styles.css') }}" rel="stylesheet">
+    <link href="{{ asset('front-end/header/css/styles.css') }}" rel="stylesheet">
 
 </head>
 
@@ -60,13 +62,23 @@
     <div id="preloder">
         <div class="loader"></div>
     </div>
+    <div class="container-fluid p-0">
+        <div class="card h-100 border-0 bg-codea">
+            <div style="height: 550px" class="row m-0 align-items-end">
 
-    @include('frontend.heade')
+            </div>
+            <div class="card-img-overlay p-0">
+                @include('frontend.heade')
 
-    @yield('content')
+                @yield('content')
+
+                @include('frontend.footer')
+
+            </div>
+        </div>
+    </div>
 
 
-    @include('frontend.footer')
 
     <!-- Js Plugins -->
     <script src="{{ asset('front-end/assets/js/jquery-3.3.1.min.js') }}"></script>
@@ -97,11 +109,15 @@
     <!-- Core theme JS-->
     <script src="{{ asset('home/js/scripts.js') }}"></script>
 
-        <!-- Scripts -->
-    <script src="{{ asset('front-end/header/js/jquery.min.js') }}"></script> <!-- jQuery for Bootstraps JavaScript plugins -->
-    <script src="{{ asset('front-end/header/js/bootstrap.min.js') }}"></script> <!-- Bootstrap framework -->
-    <script src="{{ asset('front-end/header/js/jquery.easing.min.js') }}"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="{{ asset('front-end/header/js/scripts.js') }}"></script> <!-- Custom scripts -->
+    <!-- Scripts -->
+    <script src="{{ asset('front-end/header/js/jquery.min.js') }}"></script>
+    <!-- jQuery for Bootstraps JavaScript plugins -->
+    <script src="{{ asset('front-end/header/js/bootstrap.min.js') }}"></script>
+    <!-- Bootstrap framework -->
+    <script src="{{ asset('front-end/header/js/jquery.easing.min.js') }}"></script>
+    <!-- jQuery Easing for smooth scrolling between anchors -->
+    <script src="{{ asset('front-end/header/js/scripts.js') }}"></script>
+    <!-- Custom scripts -->
 </body>
 
 </html>

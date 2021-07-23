@@ -26,6 +26,10 @@ Route::get('/category/{slug}', 'FrontEndController@category')->name('website.cat
 Route::get('/tag/{slug}', 'FrontEndController@tag')->name('website.tag');
 Route::get('/post/{slug}', 'FrontEndController@post')->name('website.post');
 
+//PARA LA BUSQUEDA
+
+
+
 // Rutas del panel administrativo
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
     Route::get('/dashboard','DashboardController@index')->name('dashboard');

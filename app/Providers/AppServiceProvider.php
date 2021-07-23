@@ -29,11 +29,5 @@ class AppServiceProvider extends ServiceProvider
         if (config('app.env') === 'production') {
             \URL::forceScheme('https');
         }
-
-        $categories = Category::take(5)->get();
-        View::share('categories', $categories);
-
-        //$setting = Setting::first();
-        //View::share('setting', $setting);
     }
 }

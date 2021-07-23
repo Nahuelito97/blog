@@ -3,20 +3,20 @@
 @section('title', 'Detalles')
 
 @section('content')
-    <!-- Header -->
-    <header class="ex-header">
+    <div class="jumbotron big-banner mb-0 jumbotron-fluid" style="height: 500px; padding-top: 150px;">
         <div class="container">
-            <div class="row">
-                <div class="col-xl-10 offset-xl-1">
-                    <h1>Detalles del Post</h1>
-                </div> <!-- end of col -->
-            </div> <!-- end of row -->
-        </div> <!-- end of container -->
-    </header> <!-- end of ex-header -->
-    <!-- end of header -->
-
+            <div class="row align-items-center">
+                <div class="col">
+                    <div class="col-md-4 text-light">
+                        <div class="text-container">
+                            <h1 class="mt-5 text-white">Detalles del Post</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <br>
-
     <!-- Fin Sección Slider -->
     <!-- Main -->
     <div class="container">
@@ -157,7 +157,8 @@
                                         <div class="card-body">
                                             <span class="badge badge-success text-uppercase">{{ $post->category->name }}
                                             </span>
-                                            <span class="badge badge-success text-uppercase"> {{ Str::limit($post->title, 10) }}.. </span>
+                                            <span class="badge badge-success text-uppercase">
+                                                {{ Str::limit($post->title, 10) }}.. </span>
                                         </div>
                                     </div>
                                     <div class="card-footer text-muted">

@@ -8,28 +8,28 @@ use App\User;
 use App\Post;
 use App\Category;
 use Illuminate\Http\Request;
+use Psy\CodeCleaner\FunctionReturnInWriteContextPass;
 
 class FrontEndController extends Controller
 {
     public function home(Request $request){
 
-        $titulo = $request->get('buscarpor');
-
-        $consulta=Post::select('posts.*');
-
-
-        $posts = $consulta->where('title', 'like', "%$titulo%")->paginate(6);
-
         $posts = Post::with('category', 'user')->orderBy('created_at', 'DESC')->take(5)->get();
         $firstPosts2 = $posts->splice(0, 2);
 
-        $recentPosts = Post::with('category', 'user')->orderBy('id', 'DESC')->paginate(12);
-        return view('website.home', compact(['posts', 'recentPosts', 'firstPosts2']));
+
+        $categories = Category::orderBy('id', 'asc')->paginate(10);
+
+        $recentPosts = Post::with('category', 'user')
+            ->orderBy('id', 'DESC')
+            ->paginate(12);
+
+        return view('website.home', compact(['posts', 'recentPosts', 'firstPosts2', 'categories']));
     }
+
 
     public function about(){
         $user = User::first();
-
         return view('website.about', compact('user'));
     }
 

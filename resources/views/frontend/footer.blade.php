@@ -1,15 +1,9 @@
-<!-- Footer Section Begin -->
-<footer class="footer-section">
+<!-- Footer -->
+<div class="footer bg-gray">
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
                 <div>
-
-                    <div class="footer-logo">
-                        <img src="{{ asset('front-end/assets/img/logo/brand.png') }}" class="rounded-circle"
-                            alt="Cinque Terre" width="100" height="80">
-
-                    </div>
                     <span class="text-white">¿Qué es Nahu Coodes?
                         <br>
                         Nahu Coodes es un blog
@@ -20,60 +14,50 @@
                     </span>
                 </div>
             </div>
+            <div class="col-lg-6">
+                <div class="social-container">
+                    <span class="fa-stack">
+                        <a target="_blank" href="https://www.instagram.com/nahue_wagner/">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-instagram fa-stack-1x"></i>
+                        </a>
+                    </span>
+                    <span class="fa-stack">
+                        <a target="_blank" href="https://github.com/Nahuelito97">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fab fa-github fa-stack-1x"></i>
+                        </a>
+                    </span>
+                </div> <!-- end of social-container -->
+            </div> <!-- end of col -->
+        </div> <!--end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of footer -->
+<!-- end of footer -->
 
-            <div class="col-lg-2">
 
-            </div>
-            <div class="col-lg-4">
-                <div class="newslatter-item">
-                    <span class="text-white text-uppercase">sigueme en las redes sociales </span>
+<!-- Copyright -->
+<div class="copyright bg-gray">
+   <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="footer-logo">
+                    <img src="{{ asset('front-end/assets/img/logo/brand.png') }}" class="rounded-circle"
+                        alt="Cinque Terre" width="100" height="80">
 
-                    <div class="footer-left">
-                        <div class="footer-social">
-                            <a target="_blank" href="https://www.instagram.com/nahue_wagner/"><i
-                                    class="fa fa-instagram"></i></a>
-                            <a target="_blank" href="https://github.com/Nahuelito97"><i class="fa fa-github"></i></a>
-                        </div>
-                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
+                <p class="p-small">
+                    Copyright ©
+                    <script>
+                        document.write(new Date().getFullYear());
+                    </script>  |
+                    <span class="text-uppercase">
+                        Nahuel Wagner
+                    </span>
+                </p>
+            </div> <!-- end of col -->
+        </div> <!-- enf of row -->
+    </div> <!-- end of container -->
 
-    <div class="copyright-reserved">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="copyright-text">
-                        <script>
-                            document.write(new Date().getFullYear());
-                        </script> Todos los derechos reservados, este
-                        sitio web fue echo <i class="fa fa-heart-o" aria-hidden="true"></i> por </span>
-                        <span class="badge badge-danger text-uppercase">Nahuel Wagner</span>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row" style="font-size: 12px;">
-        <div class="col pl-5">
-            <img src="images/logo-coral.svg" width="100px" class="mr-5"> <span>Copyright © 2018 Udemy, Inc.</span>
-        </div>
-        <div class="col">
-            <ul class="nav justify-content-end">
-                <li class="nav-item">
-                    <a class="nav-link active text-info" href="#">Terms</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-info" href="#">Privacy and Cookie Police</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-info" href="#">Intellectual Property</a>
-                </li>
-            </ul>
-
-        </div>
-    </div>
-</footer>
-
+</div> <!-- end of copyright -->
+<!-- end of copyright -->
