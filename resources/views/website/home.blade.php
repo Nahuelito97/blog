@@ -13,20 +13,6 @@
                             <h1 class="mt-5 text-white">ARTÍCULOS Y CONSEJOS PRÁCTICOS DE PROGRAMACIÓN</h1>
                         </div>
                     </div>
-                    <div class="col-md-6">
-                        <form class="form-inline my-2 my-lg-0 text-rigth" action="{{ route('website') }}" method="GET">
-                            <input class="form-control form-control-lg mr-sm-0 col-8
-                                                                             border-right-0"
-                                style="border-radius: 5px 0px 0px 5px; "
-                                type="text"
-                                name="search"
-                                placeholder="BÚscar Publicaciones..">
-
-                            <button class="btn btn-light btn-lg my-2 my-sm-0 col-2 border-left-0"
-                                style="border-radius: 0px 5px 5px 0px;" type="submit"><i
-                                    class="fas text-danger fa-search"></i></button>
-                        </form>
-                    </div>
                 </div>
             </div>
         </div>
@@ -36,9 +22,8 @@
         <br>
         <h3>
             <small class="text-muted">
-                <span class="text-white  text-center"></span> { <span
-                class="slogan text-danger" style="font-size: 38px">Ultimos  Artículos</span> } <span
-                class="text-white"></span>
+                <span class="text-white  text-center"></span> { <span class="slogan text-danger"
+                    style="font-size: 38px">Ultimos Artículos</span> } <span class="text-white"></span>
             </small>
         </h3>
         <br>
@@ -69,33 +54,33 @@
                 @endforeach
                 <!-- Fin Artículos -->
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-8 order-2 order-lg-1">
-                <div class="blog-sidebar">
-                    <div class="blog-catagory">
 
-                        <div class="dropdown">
-                            <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1"
-                                data-bs-toggle="dropdown" aria-expanded="false">
-                                Categorías
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                                @foreach ($categories as $category)
-                                    <li>
-                                        <a class="dropdown-item"
-                                            href="{{ route('website.category', ['slug' => $category->slug]) }}">
-                                            <span class="badge badge-success text-uppercase">
-                                                {{ $category->name }}
-                                            </span>
-                                        </a>
-                                    </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    </div>
+        </div>
+    </div>
+    <div class="container-fluid p-0" style="background: black">
+        <div class="container pt-5 pb-5">
+            <div class="row align-items-center justify-content-center mt- mb-5">
+                <div class="col-sm-12 m-4">
+                    <h2 class="text-center text-danger font-weight-bolder">{ Categorías }</h2>
+                </div>
+
+                <div class="col-sm-4 col-6 mb-4">
+                    @foreach ($categories as $category)
+
+                        <a class="btn btn-outline-danger btn-block rounded-pill"
+                            href="{{ route('website.category', ['slug' => $category->slug]) }}"
+                            title="{{ $category->slug }}">
+                            {{ $category->name }}
+                        </a>
+
+                    @endforeach
                 </div>
             </div>
         </div>
     </div>
+
+
+
     <!-- Blog Section Begin -->
     <section class="blog-section spad">
         <div class="container">
@@ -105,35 +90,49 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
+
                         @foreach ($recentPosts as $post)
 
                             <div class="col-lg-4 col-sm-4">
-                                <div class="blog-item">
-                                    <div class="bi-pic">
-                                        <span class="badge  badge-warning w-50 mt-2" style="position: absolute; z-index: 3">
-                                            {{ $post->category->name }}
-                                        </span>
-                                        <a href="{{ route('website.post', ['slug' => $post->slug]) }}" class="rb-item">
-                                            <div class="rb-pic">
-                                                <img src="{{ $post->image }}" alt="">
+                                <div class="mb-2">
+                                    <div class="text-center card">
+                                        <div class="shadow h-100">
+
+                                            <div class="blog-item">
+                                                <div class="bi-pic">
+                                                    <span class="badge  badge-warning w-50 mt-2"
+                                                        style="position: absolute; z-index: 3">
+                                                        {{ $post->category->name }}
+                                                    </span>
+                                                    <a href="{{ route('website.post', ['slug' => $post->slug]) }}"
+                                                        class="rb-item">
+                                                        <div class="rb-pic">
+                                                            <img src="{{ $post->image }}" alt="">
+                                                        </div>
+                                                    </a>
+                                                </div>
+
+                                                <div class="bi-text">
+                                                    <a href="{{ route('website.post', ['slug' => $post->slug]) }}"
+                                                        class="text-secondary text-decoration-none">
+                                                        <h6>{{ Str::limit($post->title, 30) }}.. </h6>
+                                                    </a>
+                                                    <img src="@if ($post->user->image) {{ $post->user->image }}
+                                                @else
+                                                    {{ asset('website/images/user.png') }} @endif"
+                                                    class="rounded-circle" alt="Cinque Terre" width="50" height="40">
+                                                    {{ $post->user->name }} -
+                                                    {{ $post->created_at->format('M d, Y') }}</p>
+                                                </div>
                                             </div>
-                                        </a>
-                                    </div>
-                                    <div class="bi-text">
-                                        <a href="{{ route('website.post', ['slug' => $post->slug]) }}"
-                                            class="text-secondary text-decoration-none">
-                                            <h6>{{ Str::limit($post->title, 30) }}.. </h6>
-                                        </a>
-                                        <img src="@if ($post->user->image) {{ $post->user->image }}
-                                    @else
-                                        {{ asset('website/images/user.png') }} @endif"
-                                        class="rounded-circle" alt="Cinque Terre" width="50" height="40">
-                                        {{ $post->user->name }} - {{ $post->created_at->format('M d, Y') }}</p>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
                         @endforeach
                     </div>
+                    <br>
                     <div class="col-lg-12">
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center">
