@@ -11,6 +11,9 @@
                         <div class="text-container">
                             <h1 class="mt-5 text-white">Detalles del Post</h1>
                         </div>
+                        <img src="{{ asset('front-end/assets/img/logo/logo.png') }}"
+                class="rounded-circle"
+            alt="Cinque Terre" width="80" height="70">
                     </div>
                 </div>
             </div>

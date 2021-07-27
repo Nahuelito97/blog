@@ -10,7 +10,7 @@
                 <div class="col">
                     <div class="col-md-4 text-light">
                         <div class="text-container">
-                            <h1 class="mt-5 text-white">ARTÍCULOS Y CONSEJOS PRÁCTICOS DE PROGRAMACIÓN</h1>
+                            <h1 class="mt-5 text-white">Artículos y consejos prácticos sobre Programación</h1>
                         </div>
                     </div>
                 </div>
@@ -39,7 +39,10 @@
                         </div>
                         <div class="col-9">
                             <h5 class="h4">
-                                < /><a href="{{ route('website.post', ['slug' => $post->slug]) }}" class="text-danger">
+                                <img src="{{ asset('front-end/assets/img/logo/webdev.png') }}"
+                                class="rounded-circle"
+                            alt="Cinque Terre" width="40" height="30">
+                                <a href="{{ route('website.post', ['slug' => $post->slug]) }}" class="text-danger">
                                     {{ $post->title }}
                                 </a>
                             </h5>
@@ -84,7 +87,9 @@
     <!-- Blog Section Begin -->
     <section class="blog-section spad">
         <div class="container">
-            <h2 class="text-center text-danger font-weight-bolder">{ Todas las Publicaciones }</h2>
+            <h2 class="text-center text-danger font-weight-bolder">{ Todas las Publicaciones }   <img src="{{ asset('front-end/assets/img/logo/webdev.png') }}"
+                class="rounded-circle"
+            alt="Cinque Terre" width="40" height="30"></h2>
 
             <br>
             <div class="row">
@@ -113,14 +118,16 @@
                                                 </div>
 
                                                 <div class="bi-text">
+
                                                     <a href="{{ route('website.post', ['slug' => $post->slug]) }}"
                                                         class="text-secondary text-decoration-none">
                                                         <h6>{{ Str::limit($post->title, 30) }}.. </h6>
                                                     </a>
                                                     <img src="@if ($post->user->image) {{ $post->user->image }}
                                                 @else
-                                                    {{ asset('website/images/user.png') }} @endif"
-                                                    class="rounded-circle" alt="Cinque Terre" width="50" height="40">
+                                                    {{ asset('front-end/assets/img/logo/user03.png') }} @endif"
+                                                    class="rounded-circle" alt="Cinque Terre" width="40" height="30">
+                                                    |
                                                     {{ $post->user->name }} -
                                                     {{ $post->created_at->format('M d, Y') }}</p>
                                                 </div>

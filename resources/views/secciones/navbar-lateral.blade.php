@@ -89,8 +89,6 @@
                         </a>
                     @endcan
                 </li>
-
-
                 <li class="mt-auto nav-item">
                     @can('admin.user.index')
                         <a href="{{ route('user.index') }}"
