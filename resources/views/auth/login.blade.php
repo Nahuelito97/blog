@@ -8,8 +8,7 @@
     <!--===============================================================================================-->
     <link rel="Shortcut Icon " type="image/x-icon" href="{{ asset('Login_v4/Login_v4/images/brand.jpg') }}" />
     <!--===============================================================================================-->
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('Login_v4/Login_v4/vendor/bootstrap/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('Login_v4/Login_v4/vendor/bootstrap/css/bootstrap.min.css') }}">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css"
         href="{{ asset('Login_v4/Login_v4/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}">
@@ -50,27 +49,28 @@
                     <div class="wrap-input100 validate-input m-b-23" data-validate="Username is reauired">
                         <span class="label-input100" for="email">Correo Electronico</span>
                         <input id="email" type="email" class="input100 @error('email') is-invalid @enderror"
-                        name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
-                        placeholder="Correo Electronico">
+                            name="email" value="{{ old('email') }}" required autocomplete="email" autofocus
+                            placeholder="Correo Electronico">
                         <span class="focus-input100" data-symbol="&#xf206;"></span>
                         @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
 
                     <div class="wrap-input100 validate-input" data-validate="Password is required">
                         <span class="label-input100" for="password">Contraseña</span>
                         <input id="password" type="password" class="input100 @error('password') is-invalid @enderror"
-                        name="password" required autocomplete="current-password"
-                        placeholder="Escribe tu contraseña">
+                            name="password" required autocomplete="current-password"
+                            placeholder="Escribe tu contraseña">
                         <span class="focus-input100" data-symbol="&#xf190;"></span>
                     </div>
                     <div class="form-group row">
                         <div class="col-md-4 offset-md-2">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                                <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                                    {{ old('remember') ? 'checked' : '' }}>
 
                                 <label class="form-check-label" for="remember">
                                     {{ __('Remember Me') }}
@@ -79,7 +79,7 @@
                         </div>
                     </div>
 
-                    <br/>
+                    <br />
 
                     <div class="container-login100-form-btn">
                         <div class="wrap-login100-form-btn">
@@ -90,7 +90,25 @@
                         </div>
                     </div>
 
+                    {{-- Login with GitHub --}}
+                    <div class="flex items-center justify-end mt-4">
+                        <a class="btn" href="{{ url('/auth/github') }}"
+                            style="background: #313131; color: #ffffff; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px;">
+                            Login with GitHub
+                        </a>
+                    </div>
+
                 </form>
+
+
+                <div class="social-auth-links text-center mt-2 mb-3">
+                    <a href="#" class="btn btn-block btn-primary">
+                        <i class="fab fa-github mr-2"></i> Sign in using GitHub
+                    </a>
+                    <a href="#" class="btn btn-block btn-danger">
+                        <i class="fab fa-google-plus mr-2"></i> Sign in using Google+
+                    </a>
+                </div>
             </div>
         </div>
     </div>

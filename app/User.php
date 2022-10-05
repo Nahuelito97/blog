@@ -12,14 +12,19 @@ class User extends Authenticatable
 {
     use HasRoles;
     use Notifiable;
-    
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
+        'github_id',
+        'auth_type',
+
     ];
 
     /**
